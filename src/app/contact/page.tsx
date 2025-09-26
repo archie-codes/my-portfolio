@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { Mail, Github, Linkedin, Facebook } from "lucide-react";
+import { Mail, Github, Facebook } from "lucide-react";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
