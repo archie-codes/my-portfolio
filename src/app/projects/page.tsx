@@ -17,8 +17,8 @@ const projects = [
       "A sleek portfolio built with Next.js, Tailwind, and shadcn/ui.",
     image: "/projects/portfolio.png",
     tech: ["Next.js", "Tailwind", "shadcn/ui"],
-    demo: "https://myportfolio.com",
-    github: "https://github.com/username/portfolio",
+    // demo: "https://myportfolio.com",
+    // github: "https://github.com/username/portfolio",
   },
   {
     title: "E-commerce Store",
@@ -26,8 +26,8 @@ const projects = [
       "Full-stack store with authentication, cart, and Stripe payments.",
     image: "/projects/store.png",
     tech: ["React", "Node.js", "Stripe"],
-    demo: "https://store-demo.com",
-    github: "https://github.com/username/store",
+    // demo: "https://store-demo.com",
+    // github: "https://github.com/username/store",
   },
   {
     title: "Analytics Dashboard",
@@ -35,8 +35,8 @@ const projects = [
       "Interactive dashboard with charts and role-based authentication.",
     image: "/projects/dashboard.png",
     tech: ["Next.js", "Postgres", "Chart.js"],
-    demo: "https://dashboard-demo.com",
-    github: "https://github.com/username/dashboard",
+    // demo: "https://dashboard-demo.com",
+    // github: "https://github.com/username/dashboard",
   },
 ];
 
@@ -109,14 +109,14 @@ export default function ProjectsPage() {
             {/* Footer */}
             <CardFooter className="flex justify-between">
               <Button asChild variant="secondary" size="sm">
-                <Link href={project.github} target="_blank">
+                {/* <Link href={project.github} target="_blank"> */}
                   GitHub
-                </Link>
+                {/* </Link> */}
               </Button>
               <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-                <Link href={project.demo} target="_blank">
+                {/* <Link href={project.demo} target="_blank"> */}
                   Live Demo
-                </Link>
+                {/* </Link> */}
               </Button>
             </CardFooter>
           </Card>

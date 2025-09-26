@@ -38,7 +38,7 @@ export function Hero() {
                 <SplitText
                   key={key} // changing key forces re-mount, replaying the animation
                   text="Archie"
-                  className="text-6xl font-semibold"
+                  className="text-4xl md:text-6xl font-semibold"
                   delay={100}
                   duration={0.6}
                   ease="power3.out"
