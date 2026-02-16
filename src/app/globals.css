@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -42,76 +46,98 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   /* For Spotlight */
-   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
+  /* Premium Light Mode: Clean White with Cool Grey Text */
+  --background: oklch(0.99 0.005 260); /* Very slight cool tint on white */
+  --foreground: oklch(0.2 0.03 265); /* Deep charcoal gray for text */
+  
+  --card: oklch(1 0 0); /* Pure white cards */
+  --card-foreground: oklch(0.2 0.03 265);
+  
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
-  --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
-  --accent-foreground: oklch(0.216 0.006 56.043);
+  --popover-foreground: oklch(0.2 0.03 265);
+  
+  --primary: oklch(0.65 0.18 200); /* Cyan/Blue Primary */
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.96 0.01 260); /* Very light cool grey */
+  --secondary-foreground: oklch(0.2 0.03 265);
+  
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.5 0.05 260);
+  
+  --accent: oklch(0.96 0.01 260);
+  --accent-foreground: oklch(0.2 0.03 265);
+  
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.923 0.003 48.717);
-  --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
+  --border: oklch(0.9 0.02 260);
+  --input: oklch(0.9 0.02 260);
+  --ring: oklch(0.65 0.18 200);
+  
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
+  
+  --sidebar: oklch(0.98 0.01 260);
+  --sidebar-foreground: oklch(0.2 0.03 265);
+  --sidebar-primary: oklch(0.65 0.18 200);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.01 260);
+  --sidebar-accent-foreground: oklch(0.2 0.03 265);
+  --sidebar-border: oklch(0.9 0.02 260);
+  --sidebar-ring: oklch(0.65 0.18 200);
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.25);
-  --foreground: oklch(0.985 0.001 106.423);
-  --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
-  --primary: oklch(0.923 0.003 48.717);
-  --primary-foreground: oklch(0.216 0.006 56.043);
-  --secondary: oklch(0.268 0.007 34.298);
-  --secondary-foreground: oklch(0.985 0.001 106.423);
-  --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.268 0.007 34.298);
-  --accent-foreground: oklch(0.985 0.001 106.423);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.553 0.013 58.071);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
+  /* Premium Dark Mode: Deep Navy / Charcoal / Cyan */
+  /* Using OKLCH for consistent perceptual lightness */
+  
+  --background: oklch(0.15 0.02 260); /* Deep Navy/Charcoal Base */
+  --foreground: oklch(0.92 0.01 260); /* Off-white text */
+  
+  --card: oklch(0.18 0.025 260); /* Slightly lighter panel */
+  --card-foreground: oklch(0.92 0.01 260);
+  
+  --popover: oklch(0.18 0.025 260);
+  --popover-foreground: oklch(0.92 0.01 260);
+  
+  --primary: oklch(0.7 0.15 200); /* Cyan/Teal (Vibrant) */
+  --primary-foreground: oklch(0.15 0.02 260); /* Dark text on primary */
+  
+  --secondary: oklch(0.22 0.03 260); /* Lighter Navy */
+  --secondary-foreground: oklch(0.92 0.01 260);
+  
+  --muted: oklch(0.22 0.03 260);
+  --muted-foreground: oklch(0.7 0.03 260); /* Muted Blue-Grey */
+  
+  --accent: oklch(0.7 0.15 200); /* Cyan Accent */
+  --accent-foreground: oklch(0.15 0.02 260);
+  
+  --destructive: oklch(0.6 0.25 25);
+  --border: oklch(0.25 0.03 260); /* Subtle border */
+  --input: oklch(0.25 0.03 260);
+  --ring: oklch(0.7 0.15 200);
+  
+  --chart-1: oklch(0.7 0.15 200);
+  --chart-2: oklch(0.6 0.15 280);
+  --chart-3: oklch(0.8 0.1 80);
+  --chart-4: oklch(0.6 0.2 320);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
+  
+  --sidebar: oklch(0.15 0.02 260);
+  --sidebar-foreground: oklch(0.92 0.01 260);
+  --sidebar-primary: oklch(0.7 0.15 200);
+  --sidebar-primary-foreground: oklch(0.15 0.02 260);
+  --sidebar-accent: oklch(0.22 0.03 260);
+  --sidebar-accent-foreground: oklch(0.92 0.01 260);
+  --sidebar-border: oklch(0.25 0.03 260);
+  --sidebar-ring: oklch(0.7 0.15 200);
 }
 
 @layer base {
@@ -123,19 +149,15 @@
   }
 }
 
-/* globals.css */
+/* Custom Utilities */
 .bg-portfolio {
-  background: radial-gradient(
-      circle at top left,
-      rgba(0, 102, 255, 0.2),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(255, 0, 150, 0.15),
-      transparent 40%
-    ),
-    linear-gradient(to bottom right, #0b1630, #000000);
+  /* No longer strictly needed as we rely on bg-background, 
+     but keeping for the textured look in Hero if desired.
+     Refactoring to use CSS variables for theme support */
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(circle at 15% 50%, oklch(0.65 0.18 200 / 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, oklch(0.6 0.2 320 / 0.05), transparent 25%);
 }
 
 /* For spotlight */
