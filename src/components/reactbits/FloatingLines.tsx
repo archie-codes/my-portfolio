@@ -11,8 +11,6 @@ import {
   WebGLRenderer,
 } from "three";
 
-
-
 const vertexShader = `
 precision highp float;
 
