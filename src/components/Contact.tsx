@@ -11,21 +11,50 @@ import { toast } from "sonner";
 
 export function Contact({ id }: { id?: string }) {
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      toast("Message sent!", {
-        position: "top-right",
-        description: "I'll get back to you as soon as possible.",
-        action: {
-          label: "Close",
-          onClick: () => toast.dismiss(),
+
+    // 1. Save the form reference IMMEDIATELY before doing anything else
+    const form = event.currentTarget;
+
+    const formData = new FormData(form);
+    formData.append("access_key", "a871e90a-6805-4d45-a96a-627eda2104dd");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
         },
+        body: formData,
       });
-    }, 1500);
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        toast.success("Message sent!", { position: "top-right" });
+
+        // 2. Use the saved reference to reset the form
+        form.reset();
+      } else {
+        console.error("Web3Forms API Error:", data);
+        setResult("Error");
+        toast.error(data.message || "Error! Message not sent.", {
+          position: "top-right",
+        });
+      }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      setResult("Error");
+      toast.error("Network error.", { position: "top-right" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -117,6 +146,7 @@ export function Contact({ id }: { id?: string }) {
                     Name
                   </label>
                   <Input
+                    name="name"
                     type="text"
                     placeholder="John Doe"
                     required
@@ -128,6 +158,7 @@ export function Contact({ id }: { id?: string }) {
                     Email
                   </label>
                   <Input
+                    name="email"
                     type="email"
                     placeholder="john@example.com"
                     required
@@ -139,6 +170,7 @@ export function Contact({ id }: { id?: string }) {
                     Message
                   </label>
                   <Textarea
+                    name="message"
                     placeholder="Tell me about your project..."
                     rows={6}
                     required
