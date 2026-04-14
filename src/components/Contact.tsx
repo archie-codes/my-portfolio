@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { Mail, Github, Facebook, Send } from "lucide-react";
+import { Mail, Facebook, Send, Phone } from "lucide-react";
+import { toast } from "sonner";
 
 export function Contact({ id }: { id?: string }) {
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,14 @@ export function Contact({ id }: { id?: string }) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      alert("Message sent! (Demo only)");
+      toast("Message sent!", {
+        position: "top-right",
+        description: "I'll get back to you as soon as possible.",
+        action: {
+          label: "Close",
+          onClick: () => toast.dismiss(),
+        },
+      });
     }, 1500);
   };
 
@@ -38,9 +46,26 @@ export function Contact({ id }: { id?: string }) {
           {/* Contact Information Side */}
           <div className="space-y-8">
             <div className="grid gap-6">
-              <Card className="border-border bg-card shadow-sm hover:shadow-md transition-shadow">
+              <Card className="shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-green-500/10 via-card to-emerald-500/10 border-green-500/20 hover:border-green-500/50 hover:shadow-green-500/10">
                 <CardContent className="flex items-center gap-4 p-6">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                  <div className="p-3 bg-green-500/10 rounded-xl text-green-500">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Phone</h3>
+                    <Link
+                      href="tel:+639077284845"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      +63 907 728 4845
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-rose-500/10 via-card to-red-500/10 border-rose-500/20 hover:border-rose-500/50 hover:shadow-rose-500/10">
+                <CardContent className="flex items-center gap-4 p-6">
+                  <div className="p-3 bg-rose-500/10 rounded-xl text-rose-500">
                     <Mail size={24} />
                   </div>
                   <div>
@@ -55,27 +80,9 @@ export function Contact({ id }: { id?: string }) {
                 </CardContent>
               </Card>
 
-              <Card className="border-border bg-card shadow-sm hover:shadow-md transition-shadow">
+              <Card className="shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-blue-500/10 via-card to-indigo-500/10 border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10">
                 <CardContent className="flex items-center gap-4 p-6">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                    <Github size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">GitHub</h3>
-                    <Link
-                      href="https://github.com/archie-codes"
-                      target="_blank"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      github.com/archie-codes
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border bg-card shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="flex items-center gap-4 p-6">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                  <div className="p-3 bg-blue-500/10 rounded-xl text-blue-500">
                     <Facebook size={24} />
                   </div>
                   <div>
@@ -94,7 +101,7 @@ export function Contact({ id }: { id?: string }) {
           </div>
 
           {/* Contact Form Side */}
-          <Card className="border-border bg-card shadow-lg">
+          <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-card to-background shadow-lg shadow-primary/5">
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl font-bold text-foreground">
                 Send me a message

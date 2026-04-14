@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 export function About({ id }: { id?: string }) {
@@ -13,11 +14,12 @@ export function About({ id }: { id?: string }) {
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10" />
-              {/* Replace with actual image */}
-              <div className="w-full h-full bg-secondary flex items-center justify-center text-muted-foreground">
-                <span className="text-sm">Profile Image</span>
-              </div>
-              {/* <Image src="/path-to-your-photo.jpg" alt="Archie Bauzon" fill className="object-cover" /> */}
+              <Image 
+                src="/profile-picture.jpg" 
+                alt="Archie Bauzon" 
+                fill 
+                className="object-cover" 
+              />
             </div>
           </div>
 
@@ -60,7 +62,7 @@ export function About({ id }: { id?: string }) {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
               >
-                <Link href="/contact">Let&apos;s Discuss Your Project</Link>
+                <Link href="#contact">Let&apos;s Discuss Your Project</Link>
               </Button>
             </div>
           </div>

@@ -2,56 +2,68 @@
 
 import { ProjectCard } from "./ProjectCard";
 
-const webProjects = [
+const websites = [
   {
-    title: "Company Website",
-    description:
-      "A full-stack online store with secure payments, inventory tracking, and admin dashboard.",
-    image: "/projects/portfolio-v2.png", // Placeholder
+    title: "RBP Petrostar Inc.",
+    description: "Corporate website for RBP Petrostar Inc.",
+    image: "/projects/rbp_screenshot.png",
     link: "#",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
+    tech: ["Website", "Corporate"],
+    gradient: "bg-gradient-to-br from-blue-500/10 via-card to-purple-500/10 border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10",
   },
   {
-    title: "HR Management System",
-    description:
-      "Enterprise-grade HRIS for attendance, leave management, and automated payroll.",
-    image: "/projects/hris.png", // Placeholder
+    title: "FhernieOtso Corp.",
+    description: "Corporate website for FhernieOtso Corp.",
+    image: "/projects/fhernie_screenshot.png",
     link: "#",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["Website", "Business"],
+    gradient: "bg-gradient-to-br from-blue-500/10 via-card to-purple-500/10 border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10",
   },
   {
-    title: "Portfolio Website",
-    description:
-      "Modern landing page for a real estate agency with property listings and contact forms.",
-    image: "/projects/portfolio.png", // Placeholder
+    title: "JC&L Proserve Inc.",
+    description: "Corporate website for JC&L Proserve Inc.",
+    image: "/projects/jcl_screenshot.png",
     link: "#",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    tech: ["Website", "Agency"],
+    gradient: "bg-gradient-to-br from-blue-500/10 via-card to-purple-500/10 border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10",
   },
 ];
 
-const designProjects = [
+const systems = [
   {
-    title: "Wedding Invitation Suite",
-    description: "Elegant floral wedding invitation set designed in Photoshop.",
-    image: "/projects/wedding-invitation.jpg", // Placeholder
+    title: "Otso Sales Monitoring System",
+    description: "Real-time sales monitoring and tracking system.",
+    image: "/projects/fhernieotso_sale_monitoring_system.png",
     link: "#",
-    tech: ["Photoshop", "Typography", "Print Design"],
+    tech: ["System", "Dashboard", "Analytics"],
+    gradient: "bg-gradient-to-br from-emerald-500/10 via-card to-teal-500/10 border-emerald-500/20 hover:border-emerald-500/50 hover:shadow-emerald-500/10",
   },
   {
-    title: "Corporate Event Invite",
-    description:
-      "Modern and professional digital invitation for a tech conference.",
-    image: "/projects/corporate-invite.jpg", // Placeholder
+    title: "HRIS",
+    description: "Human Resource Information System for employee management.",
+    image: "/projects/jcl_hris.png", 
     link: "#",
-    tech: ["Photoshop", "Illustrator"],
+    tech: ["HRIS", "Payroll", "Management"],
+    gradient: "bg-gradient-to-br from-emerald-500/10 via-card to-teal-500/10 border-emerald-500/20 hover:border-emerald-500/50 hover:shadow-emerald-500/10",
+  },
+];
+
+const webApps = [
+  {
+    title: "Cheque and Voucher Printing",
+    description: "Application designed for automated cheque and voucher printing.",
+    image: "/projects/cheque_printing.png",
+    link: "#",
+    tech: ["Web App", "Utility", "Automation"],
+    gradient: "bg-gradient-to-br from-orange-500/10 via-card to-pink-500/10 border-orange-500/20 hover:border-orange-500/50 hover:shadow-orange-500/10",
   },
   {
-    title: "Birthday Party Flyer",
-    description:
-      "Vibrant and fun birthday party invitation with custom illustrations.",
-    image: "/projects/birthday-invite.jpg", // Placeholder
+    title: "OB Form Generator",
+    description: "Generator tool for creating Official Business forms.",
+    image: "/projects/ob_form_generator.png",
     link: "#",
-    tech: ["Photoshop", "Digital Art"],
+    tech: ["Web App", "Forms", "Utility"],
+    gradient: "bg-gradient-to-br from-orange-500/10 via-card to-pink-500/10 border-orange-500/20 hover:border-orange-500/50 hover:shadow-orange-500/10",
   },
 ];
 
@@ -64,30 +76,41 @@ export function Portfolio() {
             Featured Work
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            A selection of my recent web development projects and graphic
-            designs.
+            A selection of my recent websites, systems, and web applications.
           </p>
         </div>
 
-        {/* Web Development Section */}
+        {/* Websites Section */}
         <div className="mb-20">
           <h3 className="text-2xl font-semibold mb-8 border-l-4 border-primary pl-4 text-foreground">
-            Web & Systems
+            Websites
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {webProjects.map((project, index) => (
+            {websites.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
           </div>
         </div>
 
-        {/* Graphic Design Section */}
-        <div id="designs">
+        {/* Systems Section */}
+        <div className="mb-20">
           <h3 className="text-2xl font-semibold mb-8 border-l-4 border-primary pl-4 text-foreground">
-            Graphic Design & Invitations
+            Systems
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {designProjects.map((project, index) => (
+            {systems.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </div>
+
+        {/* Web Applications Section */}
+        <div id="web-apps">
+          <h3 className="text-2xl font-semibold mb-8 border-l-4 border-primary pl-4 text-foreground">
+            Web Applications
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {webApps.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
           </div>

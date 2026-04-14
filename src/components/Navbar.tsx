@@ -11,7 +11,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-background/70 backdrop-blur-xl border-b border-white/10 dark:border-white/5 transition-colors duration-300">
+    <header className="w-full sticky top-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border/50 transition-colors duration-300">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 text-foreground">
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center gap-3 group">
