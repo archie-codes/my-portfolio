@@ -148,7 +148,7 @@ export function Contact({ id }: { id?: string }) {
                   <Input
                     name="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Juan Dela Cruz"
                     required
                     className="bg-background"
                   />
@@ -160,7 +160,7 @@ export function Contact({ id }: { id?: string }) {
                   <Input
                     name="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="juan@example.com"
                     required
                     className="bg-background"
                   />

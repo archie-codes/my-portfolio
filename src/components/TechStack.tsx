@@ -6,18 +6,36 @@ import { Badge } from "@/components/ui/badge";
 const techStack = [
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    gradient: "bg-gradient-to-br from-blue-500/10 via-card to-purple-500/10 border-blue-500/20 hover:border-blue-500/40",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Shadcn UI",
+      "React Bits",
+    ],
+    gradient:
+      "bg-gradient-to-br from-blue-500/10 via-card to-purple-500/10 border-blue-500/20 hover:border-blue-500/40",
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "Supabase"],
-    gradient: "bg-gradient-to-br from-emerald-500/10 via-card to-teal-500/10 border-emerald-500/20 hover:border-emerald-500/40",
+    skills: [
+      "Node.js",
+      "Uploadthing",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Neon DB",
+      "Web3Forms",
+    ],
+    gradient:
+      "bg-gradient-to-br from-emerald-500/10 via-card to-teal-500/10 border-emerald-500/20 hover:border-emerald-500/40",
   },
   {
     category: "Design & Tools",
-    skills: ["Figma", "Photoshop", "Git", "VS Code", "Vercel"],
-    gradient: "bg-gradient-to-br from-orange-500/10 via-card to-pink-500/10 border-orange-500/20 hover:border-orange-500/40",
+    skills: ["Photoshop", "Git", "VS Code", "Antigravity", "Vercel", "Github"],
+    gradient:
+      "bg-gradient-to-br from-orange-500/10 via-card to-pink-500/10 border-orange-500/20 hover:border-orange-500/40",
   },
 ];
 
